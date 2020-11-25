@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en" >
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Material Design Bootstrap</title>
+  <!-- Font Awesome -->
+  <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css"> -->
+  <!-- Bootstrap core CSS -->
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet" th:href="@{/assets/css/bootstrap.min.css}">
+  <!-- Material Design Bootstrap -->
+  <link href="assets/css/mdb.min.css" rel="stylesheet" th:href="@{/assets/css/mdb.min.css}">
+  <!-- Your custom styles (optional) -->
+  <link href="assets/css/style.min.css" rel="stylesheet" th:href="@{/assets/css/style.min.css}">
+  <style type="text/css" >
+    html,
+    body,
+    header,
+    .view {
+      height: 100%;
+    }
+
+    @media (max-width: 740px) {
+      html,
+      body,
+      header,
+      .view {
+        height: 1000px;
+      }
+    }
+
+    @media (min-width: 800px) and (max-width: 850px) {
+      html,
+      body,
+      header,
+      .view {
+        height: 650px;
+      }
+    }
+    @media (min-width: 800px) and (max-width: 850px) {
+              .navbar:not(.top-nav-collapse) {
+                  background: #1C2331!important;
+              }
+          }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+ 
+  <!-- Navbar -->
+
+  <!-- Full Page Intro -->
+  <div class="view full-page-intro" style="background-image: url('https://mdbootstrap.com/img/Photos/Others/images/78.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+    <!-- Mask & flexbox options-->
+    <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+      <!-- Content -->
+      <div class="container">
+
+        <!--Grid row-->
+        <div class="row wow fadeIn">
+
+          <!--Grid column-->
+          <div class="col-md-6 mb-4 white-text text-center text-md-left">
+
+            <h1 class="display-4 font-weight-bold">登录&amp;注册界面</h1>
+
+            <hr class="hr-light">
+
+            <p>
+              <strong>欢迎来到自由购第一站</strong>
+            </p>
+
+            <p class="mb-4 d-none d-md-block">
+              <strong>如果您还没有账户，请点击下方按钮注册。</strong>
+            </p>
+
+            <a th:href="@{/register}" class="btn btn-indigo btn-lg" style="font-size: 20px;">用户注册
+              <i class="fas fa-graduation-cap ml-2"></i>
+            </a>
+
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-md-6 col-xl-5 mb-4">
+
+            <!--Card-->
+            <div class="card">
+
+              <!--Card content-->
+              <div class="card-body">
+
+                <!-- Form -->
+                <form name=""  method="post"  th:action="@{/login}">
+                  <!-- Heading -->
+                  <h3 class="dark-grey-text text-center">
+                    <strong>系统登录</strong>
+                  </h3>
+                  <hr>
+
+                  <div class="md-form">
+
+                    <i class="fas fa-user prefix grey-text"></i>
+                    <input type="text" id="form3" class="form-control" name="username">
+                    <label for="form3">用户名</label>
+                  </div>
+                  <div class="md-form">
+                    <i class="fas fa-envelope prefix grey-text"></i>
+                    <input type="password" id="form2" class="form-control" name="password">
+                    <label for="form2">密码</label>
+                  </div>
+					
+
+                  <div class="text-center">
+
+                    <button class="btn btn-indigo">确定</button>
+                    <p style="color: #ff0000;text-align: center;font-size: 13px;
+                padding: 10px 0" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
+                    <hr>
+
+<!--                    <fieldset class="form-check">-->
+<!--                      <input type="checkbox" class="form-check-input" id="checkbox1">-->
+<!--                      <label for="checkbox1" class="form-check-label dark-grey-text">管理员后台登录</label>-->
+<!--                    </fieldset>-->
+
+                  </div>
+
+                </form>
+                <!-- Form -->
+
+
+              </div>
+
+            </div>
+            <!--/.Card-->
+
+          </div>
+          <!--Grid column-->
+
+        </div>
+        <!--Grid row-->
+
+      </div>
+      <!-- Content -->
+
+    </div>
+    <!-- Mask & flexbox options-->
+
+  </div>
+  <!-- Full Page Intro -->
+
+  <!--Main layout-->
+ 
+  <!--Main layout-->
+
+  <!--Footer-->
+ 
+  <!--/.Footer-->
+
+  <!-- SCRIPTS -->
+  <!-- JQuery -->
+  <script type="text/javascript" src="/assets/js/jquery-3.4.1.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="/assets/js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="/assets/js/mdb.min.js" ></script>
+  <!-- Initializations -->
+  <script type="text/javascript">
+    // Animations initialization
+    //new WOW().init();
+  </script>
+</body>
+
+</html>

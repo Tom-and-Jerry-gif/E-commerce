@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+   
+    <!--====== Required meta tags ======-->
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!--====== Title ======-->
+    <title>Furnish - Furniture and Decor Website Template</title>
+    
+    <!--====== Favicon Icon ======-->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png" th:href="@{/assets/images/favicon.png}">
+
+    <!--====== Bootstrap css ======-->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" th:href="@{/assets/css/bootstrap.min.css}">
+    
+    <!--====== Animate css ======-->
+    <link rel="stylesheet" href="assets/css/animate.css" th:href="@{/assets/css/animate.css}">
+    
+    <!--====== Magnific Popup css ======-->
+    <link rel="stylesheet" href="assets/css/magnific-popup.css" th:href="@{/assets/css/magnific-popup.css}">
+    
+    <!--====== Slick css ======-->
+    <link rel="stylesheet" href="assets/css/slick.css" th:href="@{/assets/css/slick.css}">
+    
+    <!--====== Line Icons css ======-->
+    <link rel="stylesheet" href="assets/css/LineIcons.css" th:href="@{/assets/css/LineIcons.css}">
+    
+    <!--====== Default css ======-->
+    <link rel="stylesheet" href="assets/css/default.css" th:href="@{/assets/css/default.css}">
+    
+    <!--====== Style css ======-->
+    <link rel="stylesheet" href="assets/css/style.css" th:href="@{/assets/css/style.css}">
+    
+    <!--====== Responsive css ======-->
+    <link rel="stylesheet" href="assets/css/responsive.css" th:href="@{/assets/css/responsive.css}">
+  
+  
+</head>
+
+<body>
+   
+    <!--====== PRELOADER PART START ======-->
+    
+    <div class="preloader">
+        <div class="spin">
+            <div class="cube1"></div>
+            <div class="cube2"></div>
+        </div>
+    </div>
+    
+    <!--====== PRELOADER PART START ======-->
+    
+    <!--====== HEADER PART START ======-->
+    
+    <header class="header-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <nav class="navbar navbar-expand-lg">
+                        <a class="navbar-brand">
+                            <img src="assets/images/logo.png" alt="Logo">
+                        </a>
+                        
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="bar-icon"></span>
+                            <span class="bar-icon"></span>
+                            <span class="bar-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul id="nav" class="navbar-nav ml-auto">
+
+                                <li class="nav-item" name="account" id="UserName">
+
+                                </li>
+                               <a th:href="@{/login}" onclick="logOff()" style="color: #777777">
+                                   <li class="nav-item">
+                                       注销
+                                   </li>
+                               </a>
+                               
+                                
+                            </ul> <!-- navbar nav -->
+                        </div>
+                    </nav> <!-- navbar -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </header>
+    
+    <!--====== HEADER PART ENDS ======-->
+   
+    <!--====== SLIDER PART START ======-->
+    
+    <section id="home" class="slider-area pt-100">
+        <div class="container-fluid position-relative">
+            <div class="slider-active">
+                <div class="single-slider">
+                    <div class="slider-bg">
+                        <div class="row no-gutters align-items-center ">
+                            <div class="col-lg-4 col-md-5">
+                                <div class="slider-product-image d-none d-md-block">
+                                    <img src="assets/images/slider/1.jpg" alt="Slider">
+                                    
+                                </div> <!-- slider product image -->
+                            </div>
+                            <div class="col-lg-8 col-md-7">
+                                <div class="slider-product-content">
+                                    <h1 class="slider-title mb-10" data-animation="fadeInUp" data-delay="0.3s">家具<br/>狂欢节</h1>
+                                    <p class="mb-25" data-animation="fadeInUp" data-delay="0.9s">你想要的这里都有......</p>
+                                    
+                                </div> <!-- slider product content -->
+                            </div>
+                        </div> <!-- row -->
+                    </div> <!-- container -->
+                </div> <!-- single slider -->
+
+                <div class="single-slider">
+                        <div class="slider-bg">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col-lg-4 col-md-5">
+                                    <div class="slider-product-image d-none d-md-block">
+                                        <img src="assets/images/slider/4.jpg" alt="Slider" >
+                                        
+                                    </div> <!-- slider product image -->
+                                </div>
+                                <div class="col-lg-8 col-md-7">
+                                    <div class="slider-product-content">
+                                        <h1 class="slider-title mb-10" data-animation="fadeInUp" data-delay="0.3s">服饰风尚<br/>任君选择</h1>
+                                        <p class="mb-25" data-animation="fadeInUp" data-delay="0.9s">大牌尖货等你来......</p>
+                                        
+                                    </div> <!-- slider product content -->
+                                </div>
+                            </div> <!-- row -->
+                        </div> <!-- container -->
+                </div> <!-- single slider -->
+
+                <div class="single-slider">
+                        <div class="slider-bg">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col-lg-4 col-md-5">
+                                    <div class="slider-product-image d-none d-md-block">
+                                        <img src="assets/images/slider/5.jpg" alt="Slider">
+                                        
+                                    </div> <!-- slider product image -->
+                                </div>
+                                <div class="col-lg-8 col-md-7">
+                                    <div class="slider-product-content">
+                                        <h1 class="slider-title mb-10" data-animation="fadeInUp" data-delay="0.3s">遇见<br/>最美的你</h1>
+                                        <p class="mb-25" data-animation="fadeInUp" data-delay="0.9s">大牌美妆,全场低至五折！！！</p>
+                                        
+                                    </div> <!-- slider product content -->
+                                </div>
+                            </div> <!-- row -->
+                        </div> <!-- container -->
+                </div> <!-- single slider -->
+            </div> <!-- slider active -->
+            <div class="slider-social">
+                <div class="row justify-content-end">
+                    <div class="col-lg-7 col-md-6">
+                        <ul class="social text-right">
+                            <li><i class="lni-facebook-filled"></i></li>
+                            <li><i class="lni-twitter-original"></i></li>
+                            <li><i class="lni-instagram"></i></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- container fluid -->
+    </section>
+    
+    <!--====== SLIDER PART ENDS ======-->
+   
+    <!--====== DISCOUNT PRODUCT PART START ======-->
+    
+    <section id="discount-product" class="discount-product pt-100">
+        <div class="container" style="margin-bottom: 30px">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="single-discount-product mt-30">
+                        <div class="product-image">
+                            <img src="assets/images/discount-product/product-1.jpg" alt="Product">
+                        </div> <!-- product image -->
+                        <div class="product-content">
+                            <h4 class="content-title mb-15">家居百货 <br>私人定制</h4>
+                            <a id="a1">查看更多 <i class="lni-chevron-right"></i></a>
+                        </div> <!-- product content -->
+                    </div> <!-- single discount product -->
+                </div>
+                <div class="col-lg-6">
+                    <div class="single-discount-product mt-30">
+                        <div class="product-image">
+                            <img src="assets/images/discount-product/product-2.jpg" alt="Product">
+                        </div> <!-- product image -->
+                        <div class="product-content">
+                            <h4 class="content-title mb-15">服饰搭配 <br> 与众不同</h4>
+                            <a id="a2">查看更多<i class="lni-chevron-right"></i></a>
+                        </div> <!-- product content -->
+                    </div> <!-- single discount product -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+    
+    <!--====== DISCOUNT PRODUCT PART ENDS ======-->
+   
+    <!--====== PRODUCT PART START ======-->
+    
+  
+    
+    <!--====== BACK TO TOP PART START ======-->
+
+    <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
+    
+    <!--====== BACK TO TOP PART ENDS ======-->
+    
+    
+    
+    
+    
+    
+    <script>
+        function getURLParameter(name) {
+            return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null;
+        }
+        function logOff(){
+            alert("注销成功！");
+        }
+
+
+        const uname = getURLParameter("name");
+        document.getElementById("UserName").innerText='用户账号: '+uname;
+        const a2 = document.getElementById("a2");
+        const a1=document.getElementById("a1");
+        function jumpPage(path,a){
+            a.href=path+'?name='+uname;
+        }
+        jumpPage('/clothes',a2);
+        jumpPage('/furniture',a1);
+    </script>
+    
+    
+    
+    <!--====== jquery js ======-->
+    <script src="assets/js/vendor/modernizr-3.6.0.min.js"></script>
+    <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
+
+    <!--====== Bootstrap js ======-->
+    <script src="assets/js/bootstrap.min.js"></script>
+    
+    
+    <!--====== Slick js ======-->
+    <script src="assets/js/slick.min.js"></script>
+    
+    <!--====== Magnific Popup js ======-->
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+
+    
+    <!--====== nav js ======-->
+    <script src="assets/js/jquery.nav.js"></script>
+    
+    <!--====== Nice Number js ======-->
+    <script src="assets/js/jquery.nice-number.min.js"></script>
+    
+    <!--====== Main js ======-->
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

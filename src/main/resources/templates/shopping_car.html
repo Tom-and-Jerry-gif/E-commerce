@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>我的购物车</title>
+
+    <style type="text/css">
+        /* 整张表的属性 */
+        .table { font-size: 0.875em; margin-bottom: 1.5em; width: 100%; text-align: center;padding: 0 30px;
+            margin: 20px auto;}
+        /* 带背景的行 */
+        .table tr.alt { background: #fbf3f3; }
+        /* 整张表的行属性 */
+        .table td { border-bottom: 1px solid #fbf3f3; text-align: center; padding: 5px; vertical-align: middle; }
+        /* 整张表的列属性 */
+        .table th { font-weight: 600; text-align: center; border-top: 1px solid #fbf3f3; border-bottom: 1px solid #f1f1f1; padding: 10px 5px; }
+
+        #head{background-color: #ea7e66;color: white;   font-size: 18px;}
+        .last_main h2{
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px #ddd solid;
+        }
+
+        .last_main a:hover{
+            color: #e2a2a2;
+            cursor: pointer;
+        }
+        .my_span{
+
+            display: block;
+            float: right;
+            margin-right: 20px;
+            margin-top: 10px;
+            font-size: 16px;
+            color: #f1f1f1;
+
+        }
+        .tb_header{
+            font-size: 30px;
+            text-align: center;
+            color: #e86363;
+        }
+        body{
+            margin: 0px;
+        }
+        a{
+            text-decoration: none;
+        }
+        .my_active{
+            border-bottom: 3px #fbfbfb solid;
+        }
+        #container{
+            margin: auto 120px;
+            background: #ffffffeb;
+            min-height: 600px;
+            padding: 10px;
+            border-radius: 5%;
+        }
+        .my_btn{
+            color: #fbf3f3;
+            background-color: #eb6355;
+            border: none;
+            border-radius: 20%;
+            font-size: 18px;
+            padding: 5px 10px;
+            font-weight: bold;
+            float: right;
+            margin-bottom: 10px;
+            margin-right: 40px;
+
+        }
+        button{
+            outline: 0;
+
+        }
+        body{
+            background-image: url(assets/images/car.png);
+        }
+    </style>
+
+</head>
+<body>
+<div id="container">
+    <table  class="table">
+
+        <h2 class="tb_header">我的购物车</h2>
+        <div id="btn">
+
+            <form method="post" action="/pay">
+                <button type="submit" class="my_btn"><a>付款</a></button>
+            </form>
+            <a class="my_btn" th:href="@{/clothes}+'?id='+${id}">返回</a>
+
+        </div>
+        <p th:text="${tips}" th:if="${not #strings.isEmpty(tips)}"
+        style="color: #eb6355;text-align: center;margin-left: 200px;">
+
+        </p>
+        <tbody>
+        <!-- 标题行 -->
+        <tr id="head">
+
+<!--            <td width="5%"><strong>选择</strong></td>-->
+            <td width="20%"><strong>商品编号</strong></td>
+            <td width="35%"><strong>商品名称</strong></td>
+            <td width="15%"><strong>分类</strong></td>
+            <td width="15%"><strong>单价</strong></td>
+            <td width="15%"><strong>数量</strong></td>
+            <!-- <td width="10%"><strong>备注</strong></td> -->
+
+        </tr>
+
+        <tr th:each="i:${count}">
+<!--            <td><input type="checkbox" /></td>-->
+            <td th:text="${goodsInfo[i].goods_id}"></td>
+            <td th:text="${goodsInfo[i].goods_name}"></td>
+            <td th:text="${goodsInfo[i].category}"></td>
+            <td th:text="${goodsInfo[i].price}"></td>
+            <td th:text="${goodsNum[i]}"></td>
+
+        </tr>
+
+<!--        <tr th:each ="i:${info}">-->
+<!--            <td th:text = "${i.goods_ids}"></td>-->
+<!--            <td th:text = "${i.goods_name}"></td>-->
+<!--            <td th:text = "${i.category}"></td>-->
+<!--            <td th:text = "${i.price}"></td>-->
+<!--            <td th:text = "${i.num}"></td>-->
+<!--        </tr>-->
+        </tbody>
+    </table>
+
+
+</div>
+<script>
+    function setAlert(){
+        alert("当前购物车没有商品！");
+    }
+</script>
+
+</body>
+</html>

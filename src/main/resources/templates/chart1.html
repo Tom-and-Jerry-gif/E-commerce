@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+
+    <style type="text/css">
+        /* 整张表的属性 */
+        .table { font-size: 0.875em; margin-bottom: 1.5em; width: 100%; text-align: center;padding: 0 30px;
+            margin: 20px auto;}
+        /* 带背景的行 */
+        .table tr.alt { background: #fbf3f3; }
+        /* 整张表的行属性 */
+        .table td { border-bottom: 1px solid #fbf3f3; text-align: center; padding: 5px; vertical-align: middle; }
+        /* 整张表的列属性 */
+        .table th { font-weight: 600; text-align: center; border-top: 1px solid #fbf3f3; border-bottom: 1px solid #f1f1f1; padding: 10px 5px; }
+
+        #head{background-color: #ea7e66;color: white;   font-size: 18px;}
+        .last_main h2{
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px #ddd solid;
+        }
+        .main_text{
+            padding-bottom: 15px;
+            /*border-bottom: 1px #D93124 solid;*/
+            font-size: 19px;
+            margin: auto 20px;
+            color: #ffffff;
+        }
+        .last_main{
+            background-color: #e06969;
+
+        }
+        .last_main a:hover{
+            color: #e2a2a2;
+            cursor: pointer;
+        }
+        .my_span{
+
+            display: block;
+            float: right;
+            margin-right: 20px;
+            margin-top: 10px;
+            font-size: 16px;
+            color: #f1f1f1;
+
+        }
+        .tb_header{
+            font-size: 30px;
+            text-align: center;
+            color: #e86363;
+        }
+        body{
+            margin: 0px;
+        }
+        a{
+            text-decoration: none;
+        }
+        .my_active{
+            border-bottom: 3px #fbfbfb solid;
+        }
+    </style>
+</head>
+<body>
+
+<div class="last_main con">
+    <h2>
+        <a th:href="@{/management}"><span class="main_text">商品管理</span></a>
+        <a th:href="@{/chart1}"><span class="main_text my_active">销售统计</span></a>
+        <a th:href="@{/logs}"><span class="main_text">日志统计</span></a>
+        <span class="my_span">管理员用户名：admin</span>
+        <a th:href="@{/login}"><span class="my_span">注销</span></a>
+    </h2>
+</div>
+<table  class="table">
+
+
+
+    <h2 class="tb_header">销售统计报表</h2>
+    <tbody>
+    <!-- 标题行 -->
+    <tr id="head">
+
+        <td width="20%"><strong>商品编号</strong></td>
+        <td width="35%"><strong>商品名称</strong></td>
+        <td width="15%"><strong>分类</strong></td>
+        <td width="15%"><strong>单价</strong></td>
+        <td width="15%"><strong>数量</strong></td>
+        <!-- <td width="10%"><strong>备注</strong></td> -->
+
+    </tr>
+
+    <tr class="alt" th:each ="i:${info}">
+        <td th:text = "${i.goods_ids}"></td>
+        <td th:text = "${i.goods_name}"></td>
+        <td th:text = "${i.category}"></td>
+        <td th:text = "${i.price}"></td>
+        <td th:text = "${i.num}"></td>
+    </tr>
+    </tbody>
+</table>
+
+
+<script>
+    function getURLParameter(name) {
+        return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null;
+    }
+    function logOff(){
+        alert("注销成功！");
+    }
+
+    //
+    // const uname = getURLParameter("name");
+    // document.getElementById("UserName").innerText='用户账号: '+uname;
+
+</script>
+
+
+
+</body>
+</html>

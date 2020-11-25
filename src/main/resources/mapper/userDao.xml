@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.demo.login.UserDao">
+    <select id="Login" resultType="com.example.demo.login.User">
+        select * from user_info where user_name=#{user_name} and user_password=#{user_password}
+    </select>
+    <select id="SearchById" resultType="com.example.demo.login.User">
+        select * from user_info where id=#{id}
+    </select>
+    <insert id="Register" >
+        insert into user_info(user_name,user_password,user_email) values (#{user_name},#{user_password},#{user_email})
+
+    </insert>
+    <update id="UpdateGoods" >
+        update user_info set goods_ids=#{goods_ids} where id=#{id}
+    </update>
+    <update id="SetNull">
+        update user_info set goods_ids=null where id=#{id}
+    </update>
+
+
+</mapper>

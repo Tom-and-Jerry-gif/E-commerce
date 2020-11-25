@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>日志文件查看</title>
+</head>
+
+<style type="text/css">
+
+    .last_main h2{
+        margin-bottom: 30px;
+        padding-bottom: 15px;
+        border-bottom: 1px #ddd solid;
+    }
+    .main_text{
+        padding-bottom: 15px;
+        /*border-bottom: 1px #D93124 solid;*/
+        font-size: 19px;
+        margin: auto 20px;
+        color: #ffffff;
+    }
+    .last_main{
+        background-color: #e06969;
+
+    }
+    .last_main a:hover{
+        color: #e2a2a2;
+        cursor: pointer;
+    }
+    .my_span{
+
+        display: block;
+        float: right;
+        margin-right: 20px;
+        margin-top: 10px;
+        font-size: 16px;
+        color: #f1f1f1;
+
+    }
+    .tb_header{
+        font-size: 30px;
+        text-align: center;
+        color: #e86363;
+    }
+    body{
+        margin: 0px;
+    }
+    a{
+        text-decoration: none;
+    }
+    .my_active{
+        border-bottom: 3px #fbfbfb solid;
+    }
+    #h2{
+        text-align: center;
+        color: #e86363;
+        font-size: 30px;
+    }
+    #container{
+        margin: auto 150px;
+        border: 1px #cccccc solid;
+        padding: 0px 10px;
+    }
+    p{
+        /*border-bottom: 1px #777777 dashed;*/
+        color: #671717;
+    }
+</style>
+<body>
+<div class="last_main con">
+    <h2>
+        <a th:href="@{/management}"><span class="main_text">商品管理</span></a>
+        <a th:href="@{/chart1}"><span class="main_text">销售统计</span></a>
+        <a th:href="@{/logs}"><span class="main_text my_active">日志统计</span></a>
+        <span class="my_span">管理员用户名：admin</span>
+        <a th:href="@{/login}"><span class="my_span">注销</span></a>
+    </h2>
+</div>
+<h2 id="h2">用户行为日志</h2>
+<div id="container" th:each="i:${logs}">
+    <p th:text="${i}"></p>
+</div>
+</body>
+</html>

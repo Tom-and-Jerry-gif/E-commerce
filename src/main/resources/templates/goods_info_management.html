@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>商品管理界面</title>
+    <style type="text/css">
+        /* 整张表的属性 */
+        .table { font-size: 0.875em; margin-bottom: 1.5em; width: 100%; text-align: center;padding: 0 30px;
+            margin: 20px auto;}
+        /* 带背景的行 */
+        .table tr.alt { background: #fbf3f3; }
+        /* 整张表的行属性 */
+        .table td { border-bottom: 1px solid #fbf3f3; text-align: center; padding: 5px; vertical-align: middle; }
+        /* 整张表的列属性 */
+        .table th { font-weight: 600; text-align: center; border-top: 1px solid #fbf3f3; border-bottom: 1px solid #f1f1f1; padding: 10px 5px; }
+
+        #head{background-color: #ea7e66;color: white;   font-size: 18px;}
+        .last_main h2{
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px #ddd solid;
+        }
+        .main_text{
+            padding-bottom: 15px;
+            /*border-bottom: 1px #D93124 solid;*/
+            font-size: 19px;
+            margin: auto 20px;
+            color: #ffffff;
+        }
+        .last_main{
+            background-color: #e06969;
+
+        }
+        .last_main a:hover{
+            color: #e2a2a2;
+            cursor: pointer;
+        }
+        .my_span{
+
+            display: block;
+            float: right;
+            margin-right: 20px;
+            margin-top: 10px;
+            font-size: 16px;
+            color: #f1f1f1;
+
+        }
+        .tb_header{
+            font-size: 30px;
+            text-align: center;
+            color: #e86363;
+        }
+        body{
+            margin: 0px;
+        }
+        .change{
+            width: 50px;
+            height: 30px;
+            color: #fbf3f3;
+            background-color:#eb6355;
+            border: none;
+            border-radius: 10%;
+
+
+        }
+        #add_btn{
+            color: #fbf3f3;
+            background-color:#eb6355;
+            border: none;
+            border-radius: 10%;
+            font-size: 18px;
+            padding: 5px 10px;
+            font-weight: bold;
+            float: right;
+            margin-bottom: 10px;
+            margin-right: 60px;
+            margin-left: 60px;
+
+        }
+        a{
+            color: inherit;
+            text-decoration: none;
+
+        }
+        .my_active{
+            border-bottom: 3px #fbfbfb solid;
+        }
+        button:focus{
+            outline: 0;
+        }
+    </style>
+</head>
+
+<body>
+<div class="last_main con">
+    <h2>
+        <a th:href="@{/management}"><span class="main_text my_active">商品管理</span></a>
+        <a th:href="@{/chart1}"><span class="main_text">销售统计</span></a>
+        <a th:href="@{/logs}"><span class="main_text">日志统计</span></a>
+        <span class="my_span">管理员用户名：admin</span>
+        <a th:href="@{/login}"><span class="my_span">注销</span></a>
+    </h2>
+</div>
+
+<!--<button id="add_btn" th:href="@{/add}">添加商品</button>-->
+<h2><a id="add_btn" th:href="@{/add}">添加商品</a></h2>
+
+<table  class="table">
+    <tbody>
+    <!-- 标题行 -->
+    <tr id="head">
+        <!-- <td width="15%"><strong>商品编号</strong></td> -->
+        <td width="10%"><strong>商品编号</strong></td>
+        <td width="35%"><strong>商品名称</strong></td>
+        <td width="15%"><strong>分类</strong></td>
+        <td width="10%"><strong>单价</strong></td>
+        <td width="10%"><strong>库存数量</strong></td>
+        <td width="10%"><strong>修改</strong></td>
+        <td width="10%"><strong>删除</strong></td>
+
+        <!-- <td width="10%"><strong>备注</strong></td> -->
+
+    </tr>
+    <!-- 第一行 -->
+    <tr class="alt" th:each="i:${goodInfo}">
+        <td th:text="${i.goods_id}"></td>
+        <td th:text="${i.goods_name}"></td>
+        <td th:text="${i.category}">H5工具</td>
+        <td th:text="${i.price}">&nbsp;</td>
+        <td th:text="${i.num}">&nbsp;</td>
+        <td>
+            <button class="change"><a th:href="@{/alter/}+${i.goods_id}">修改</a></button>
+
+
+        </td>
+        <td>
+            <form id="deleteEmpForm"  th:action="@{/management/}+${i.goods_id}" method="post" >
+<!--                <input type="hidden" name="_method" value="delete"/>-->
+                <button class="change" type="submit"><a>删除</a></button>
+            </form>
+
+        </td>
+
+    </tr>
+
+    </tbody>
+</table>
+
+<script>
+    function getURLParameter(name) {
+        return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null;
+    }
+
+    function getURLParameter(name) {
+        return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null;
+    }
+    msg=getURLParameter("msg")
+    if(msg!=null)setAlert(msg);
+    function setAlert(s){
+        alert(s);
+    }
+
+    //
+    // const uname = getURLParameter("name");
+    // document.getElementById("UserName").innerText='用户账号: '+uname;
+
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en" >
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>商品添加页面</title>
+
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" th:href="@{/assets/css/bootstrap.min.css}">
+    <!-- Material Design Bootstrap -->
+    <link href="assets/css/mdb.min.css" rel="stylesheet" th:href="@{/assets/css/mdb.min.css}">
+    <!-- Your custom styles (optional) -->
+    <link href="assets/css/style.min.css" rel="stylesheet" th:href="@{/assets/css/style.min.css}">
+    <style type="text/css" >
+        html,
+        body,
+        header,
+        .view {
+            height: 100%;
+        }
+
+        @media (max-width: 740px) {
+            html,
+            body,
+            header,
+            .view {
+                height: 1000px;
+            }
+        }
+
+        @media (min-width: 800px) and (max-width: 850px) {
+            html,
+            body,
+            header,
+            .view {
+                height: 650px;
+            }
+        }
+        @media (min-width: 800px) and (max-width: 850px) {
+            .navbar:not(.top-nav-collapse) {
+                background: #1C2331!important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+
+<!-- Navbar -->
+
+<!-- Full Page Intro -->
+<div class="view full-page-intro" style="background-image: url('https://mdbootstrap.com/img/Photos/Others/images/78.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+    <!-- Mask & flexbox options-->
+    <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+        <!-- Content -->
+        <div class="container">
+
+            <!--Grid row-->
+            <div class="row wow fadeIn">
+
+
+
+                <!--Grid column-->
+                <div class="col-md-6 col-xl-5 mb-4" style="margin: auto">
+
+                    <!--Card-->
+                    <div class="card">
+
+                        <!--Card content-->
+                        <div class="card-body">
+
+                            <!-- Form -->
+                            <form name=""  method="post"  th:action="@{/add}">
+                                <!-- Heading -->
+                                <h3 class="dark-grey-text text-center">
+                                    <strong>商品添加</strong>
+                                </h3>
+                                <hr>
+
+                                <div class="md-form">
+
+                                    <i class="fas fa-user prefix grey-text"></i>
+                                    <input type="text" id="form3" class="form-control" name="goodName">
+                                    <label for="form3">商品名称</label>
+                                </div>
+                                <div class="md-form">
+                                    <i class="fas fa-envelope prefix grey-text"></i>
+                                    <input type="text" id="form2" class="form-control" name="category">
+                                    <label for="form2">分类</label>
+                                </div>
+                                <div class="md-form">
+                                    <i class="fas fa-envelope prefix grey-text"></i>
+                                    <input type="text" id="form4" class="form-control" name="price">
+                                    <label for="form4">单价</label>
+                                </div>
+                                <div class="md-form">
+                                    <i class="fas fa-envelope prefix grey-text"></i>
+                                    <input type="text" id="form5" class="form-control" name="num">
+                                    <label for="form5">数量</label>
+                                </div>
+
+
+                                <div class="text-center">
+
+                                    <button class="btn btn-indigo">确定</button>
+
+                                    <hr>
+
+
+                                </div>
+
+                            </form>
+                            <!-- Form -->
+
+
+                        </div>
+
+                    </div>
+                    <!--/.Card-->
+
+                </div>
+                <!--Grid column-->
+
+            </div>
+            <!--Grid row-->
+
+        </div>
+        <!-- Content -->
+
+    </div>
+    <!-- Mask & flexbox options-->
+
+</div>
+<script>
+    function setAlert(s){
+        alert(s);
+    }
+
+
+</script>
+<!-- JQuery -->
+<script type="text/javascript" src="/assets/js/jquery-3.4.1.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="/assets/js/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="/assets/js/mdb.min.js" ></script>
+<!-- Initializations -->
+<script type="text/javascript">
+
+</script>
+</body>
+
+</html>
